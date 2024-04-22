@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="card">
       <div class="card-header bg-primary text-white">
-        <h4 class="mb-0">Add Product</h4>
+        <h4 class="mb-0">Edit Product</h4>
       </div>
       <div class="card-body">
         <div class="alert alert-warning" v-if="Object.keys(errorList).length > 0">
@@ -10,7 +10,7 @@
             <li v-for="(error, index) in errorList" :key="index" class="mb-0 ms-3">{{ error[0] }}</li>
           </ul>
         </div>
-        <form @submit.prevent="saveProduct">
+        <form @submit.prevent="updateProduct">
           <div class="mb-3">
             <label for="productName" class="form-label">Name</label>
             <input id="productName" type="text" v-model="model.product.name" class="form-control">
@@ -27,7 +27,7 @@
             <label for="productPrice" class="form-label">Price</label>
             <input id="productPrice" type="text" v-model="model.product.price" class="form-control">
           </div>
-          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="submit" class="btn btn-primary">Update</button>
         </form>
       </div>
     </div>
@@ -38,11 +38,12 @@
 import axios from "axios";
 
 export default {
-  name: 'productCreate',
+  name: 'ProductEdit',
   data() {
     return {
       csrfToken: null,
       errorList: {},
+      productId: '',
       model: {
         product: {
           name: "",
@@ -54,7 +55,9 @@ export default {
     }
   },
   mounted() {
-    this.fetchCsrfCookie();
+     this.fetchCsrfCookie();
+     this.productId = this.$route.params.id;
+     this.getProductData(this.$route.params.id);
   },
   methods: {
     fetchCsrfCookie() {
@@ -67,12 +70,25 @@ export default {
           console.error('Failed to fetch CSRF cookie:', error);
         });
     },
-    saveProduct() {
-      axios.post('http://localhost:8000/product', this.model.product)
+    getProductData(productId) {
+      axios.get(`http://localhost:8000/product/${productId}/edit`)
+      .then(res => {
+        console.log(res.data);
+        this.model.product = res.data;
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 404) {
+          console.log("Error1", error.response);
+          alert("This product ID is not present.");
+        }
+      });
+    },
+    updateProduct() {
+      axios.put(`http://localhost:8000/product/${this.productId}/update`, this.model.product)
         .then((res) => {
           console.log(res);
-          alert("Product added successfully!");
-          this.$router.push('/products'); // Redirecting to products screen
+          alert("Product updated successfully!");
+          this.$router.push('/products');
         })
         .catch((error) =>  {
           if (error.response) {
