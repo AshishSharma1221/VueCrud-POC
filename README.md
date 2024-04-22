@@ -9,7 +9,6 @@ This is a Vue.js project implementing a CRUD (Create, Read, Update, Delete) appl
 - Edit the details of an existing product.
 - Delete a product from the system.
 
-This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
