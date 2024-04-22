@@ -1,6 +1,6 @@
 # Vue.js CRUD Project
 
-This is a Vue.js project implementing a CRUD (Create, Read, Update, Delete) application for managing products. The project utilizes Vue.js for the frontend and communicates with a Laravel backend API [Link to Backend Repository](https://github.com/AshishSharma1221/LaravelCrud-POC) for data operations.
+This is a Vue.js project implementing a CRUD (Create, Read, Update, Delete) application for managing products. The project utilizes Vue.js for the frontend and communicates with a [Laravel backend API](https://github.com/AshishSharma1221/LaravelCrud-POC) for data operations.
 
 ## Features
 
