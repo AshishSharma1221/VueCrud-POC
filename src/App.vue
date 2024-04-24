@@ -32,6 +32,9 @@ import HelloWorld from "./components/HelloWorld.vue";
             <li class="nav-item">
               <RouterLink class="nav-link" to="/products">Products</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/analyser">Analyser</RouterLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -48,7 +51,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 }
 
 .navbar-brand img {
-  height: 40px;
+  height: 50px;
 }
 
 .navbar-nav .nav-link {
