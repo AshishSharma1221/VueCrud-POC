@@ -46,7 +46,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 
 <style scoped>
 .header {
-  background-color: #343a40;
+  background-color: #fff;
   padding: 10px 0;
 }
 
@@ -55,13 +55,13 @@ import HelloWorld from "./components/HelloWorld.vue";
 }
 
 .navbar-nav .nav-link {
-  color: #ffffff;
+  color: #000;
   margin: 0 10px;
   font-size: 18px;
 }
 
 .navbar-nav .nav-link:hover {
-  color: #ffffff;
+  color: #0731fa;
 }
 
 .logo {

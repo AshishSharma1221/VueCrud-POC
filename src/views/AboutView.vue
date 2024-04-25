@@ -26,7 +26,7 @@
             src="https://source.unsplash.com/random/200x200"
             alt="Team Member"
           />
-          <h3>John Doe</h3>
+          <h3>Albert Doe</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam
             ligula non nunc vestibulum.

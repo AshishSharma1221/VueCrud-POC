@@ -209,20 +209,20 @@ export default {
 
       this.showSuggestions = true;
     },
-    generateSuggestions() {
+    generateSuggestions() {     // cool to be implemented further using AI for later use
       this.suggestions = [];
 
       if (this.under12 >= 5) {
-        this.suggestions.push("Kid-friendly merchandise");
+        this.suggestions.push("Kid-friendly merchandise like Cotton Candy and Chips/ Mickey Mouse Costume ,etc");
       }
       if (this.age1217 >= 5) {
-        this.suggestions.push("Trendy merchandise");
+        this.suggestions.push("Trendy clothing and soft drinks");
       }
       if (this.age1829 >= 5) {
-        this.suggestions.push("Fashionable merchandise");
+        this.suggestions.push("For young adults: Primary focus is on food (Pizza, Fries, Hot Dog)");
       }
       if (this.above29 >= 5) {
-        this.suggestions.push("Premium merchandise");
+        this.suggestions.push("For guardians, food and drinks");
       }
     },
   },
